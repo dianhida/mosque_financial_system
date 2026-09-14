@@ -1,0 +1,66 @@
+funds:
+  infaq: INFAQ
+  wakaf: WAKAF
+
+categories:
+  infaq:
+    opening balance: OPENING_BALANCE
+    infaq: INFAQ
+    donation: DONATION
+    operasional: OPERATIONAL
+    listrik: OPERATIONAL
+    kajian: KAJIAN
+    perlengkapan: EQUIPMENT
+    equipment: EQUIPMENT
+    sosial: SOCIAL
+    tpa: TPA
+    qurban: QURBAN
+    ramadhan: SOCIAL
+    event - donor: SOCIAL
+    sampah: OTHER_INCOME
+  wakaf:
+    income: DONATION
+    ruang sound: MATERIAL
+    sertifikat: OTHER_EXPENSE
+    donasi: DONATION
+    material: MATERIAL
+    labor: LABOR
+    labor payment: LABOR
+    admin bsi: BANK_ADMINISTRATION
+    admni bsi: BANK_ADMINISTRATION
+    admin flip: BANK_ADMINISTRATION
+    other: OTHER_EXPENSE
+
+default_category:
+  income: OTHER_INCOME
+  expense: OTHER_EXPENSE
+
+activities:
+  infaq:
+    operasional: INFAQ_OPERATIONS
+    kajian: INFAQ_KAJIAN
+    tpa: INFAQ_TPA
+    event - donor: INFAQ_DONOR_DARAH
+  wakaf:
+    ruang sound: RUANG_SOUND
+    sertifikat: SERTIFIKAT
+
+vendor_aliases:
+  admin bank: null
+  '-': null
+  '??????': null
+
+account_aliases:
+  infaq: {}
+  wakaf:
+    bank: BSI Wakaf
+    cash: Kas Wakaf
+
+person_aliases:
+  pak radi: Pak Radi
+  radi: Radi
+  pak supri: Pak Supri
+  supri: Supri
+  dian: Dian Hidayat
+  'bu ahmad': Bu Ahmad
+  'bu riyanto': Bu Riyanto

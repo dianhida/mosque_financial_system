@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { --canvas: #E6F9E8; --surface: #F4FFF5; --moss: #297757; --expense: #C04440; --ink: #17352a; --muted: #6c8176; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--canvas); color: var(--ink); font-family: var(--font-montserrat), sans-serif; }
+button, input, select, textarea { font: inherit; }
+button { cursor: pointer; }
+::selection { background: #b8e6c5; }
+.page-shell { min-height: 100vh; background: radial-gradient(circle at 90% 0%, rgba(255,255,255,.72), transparent 34%), var(--canvas); }
+.surface { background: rgba(244,255,245,.84); border: 1px solid rgba(41,119,87,.12); box-shadow: 0 16px 45px rgba(41,119,87,.06); }
+.table-row { border-top: 1px solid rgba(41,119,87,.1); transition: background .2s ease; }
+.table-row:hover { background: rgba(230,249,232,.55); }
+.field { width: 100%; border: 1px solid rgba(41,119,87,.2); background: #fbfffb; border-radius: 10px; padding: 11px 13px; color: var(--ink); outline: none; }
+.field-with-icon { padding-left: 44px; }
+.field-icon { pointer-events: none; position: absolute; left: 13px; top: 50%; transform: translateY(-50%); }
+.field:focus { border-color: var(--moss); box-shadow: 0 0 0 3px rgba(41,119,87,.1); }
+.fade-up { animation: fade-up .55s ease both; }
+.login-page { position: relative; min-height: 100vh; overflow: hidden; background: var(--moss); }
+.login-photo { object-fit: cover; object-position: center; opacity: .38; filter: saturate(.55) contrast(.9); }
+.login-wash { position: absolute; inset: 0; background: linear-gradient(110deg, rgba(15, 72, 49, .9), rgba(41,119,87,.54) 48%, rgba(230,249,232,.36)); }
+.login-layout { position: relative; z-index: 1; display: grid; min-height: 100vh; align-items: center; gap: 3rem; padding: 3rem 1.5rem; }
+.login-intro { max-width: 38rem; margin: 0 auto; }
+.login-panel { width: min(100%, 28rem); margin: 0 auto; border: 1px solid rgba(255,255,255,.55); border-radius: 1.5rem; background: rgba(244,255,245,.94); padding: 2rem; box-shadow: 0 24px 80px rgba(9,58,37,.24); backdrop-filter: blur(14px); }
+@media (min-width: 900px) { .login-layout { grid-template-columns: minmax(0, 1fr) minmax(24rem, 28rem); max-width: 1280px; margin: 0 auto; padding: 4rem 4rem 4rem 6rem; } .login-intro { margin: 0; } .login-panel { margin: 0; } }
+@keyframes fade-up { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
