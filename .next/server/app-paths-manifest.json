@@ -1,5 +1,6 @@
 {
-  "/transactions/page": "app/transactions/page.js",
   "/page": "app/page.js",
-  "/dashboard/wakaf/page": "app/dashboard/wakaf/page.js"
+  "/transactions/infaq/page": "app/transactions/infaq/page.js",
+  "/transactions/wakaf/page": "app/transactions/wakaf/page.js",
+  "/login/page": "app/login/page.js"
 }
