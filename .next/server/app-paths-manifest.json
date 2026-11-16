@@ -1,6 +1,15 @@
 {
+  "/_not-found/page": "app/_not-found/page.js",
+  "/dashboard/transactions/page": "app/dashboard/transactions/page.js",
+  "/dashboard/wakaf/page": "app/dashboard/wakaf/page.js",
+  "/login/page": "app/login/page.js",
+  "/master/page": "app/master/page.js",
   "/page": "app/page.js",
+  "/master/[type]/page": "app/master/[type]/page.js",
   "/transactions/infaq/page": "app/transactions/infaq/page.js",
-  "/transactions/wakaf/page": "app/transactions/wakaf/page.js",
-  "/login/page": "app/login/page.js"
+  "/dashboard/infaq/page": "app/dashboard/infaq/page.js",
+  "/transactions/infaq/ledger/page": "app/transactions/infaq/ledger/page.js",
+  "/transactions/page": "app/transactions/page.js",
+  "/transactions/wakaf/ledger/page": "app/transactions/wakaf/ledger/page.js",
+  "/transactions/wakaf/page": "app/transactions/wakaf/page.js"
 }

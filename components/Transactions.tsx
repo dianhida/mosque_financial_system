@@ -51,19 +51,26 @@ export default function Transactions({ focus = 'INFAQ' }: { focus?: 'INFAQ' | 'W
       .toISOString()
       .slice(0, 10)
 
+    const fundCode = focus === 'INFAQ' ? 'INFAQ' : 'WAKAF'
+    const accountName = focus === 'INFAQ' ? 'Main Cash' : 'Wakaf Cash'
+
     const [monthResult, priorResult] = await Promise.all([
       supabase
         .from('transactions')
         .select(
-          'id, transaction_date, description, transaction_type, amount, fund_id, category_id, activity_id, vendor_id, person_id, account_id, reference_number, notes, funds(name), categories(name), accounts(name), vendors(name), persons(name)'
+          'id, transaction_date, description, transaction_type, amount, fund_id, category_id, activity_id, vendor_id, person_id, account_id, reference_number, notes, funds(name, code), categories(name), accounts(name), vendors(name), persons(name)'
         )
+        .eq('funds.code', fundCode)
+        .eq('accounts.name', accountName)
         .gte('transaction_date', start)
         .lte('transaction_date', end)
         .order('transaction_date', { ascending: false }),
 
       supabase
         .from('transactions')
-        .select('transaction_type, amount, fund_id, account_id')
+        .select('transaction_type, amount, fund_id, account_id, funds!inner(code), accounts!inner(name)')
+        .eq('funds.code', fundCode)
+        .eq('accounts.name', accountName)
         .lt('transaction_date', start),
     ])
 
@@ -96,7 +103,7 @@ export default function Transactions({ focus = 'INFAQ' }: { focus?: 'INFAQ' | 'W
 
   useEffect(() => {
     if (!fundFilterSet && funds.length > 0) {
-      const fund = funds.find(f => f.name.toUpperCase() === focus)
+      const fund = funds.find(f => f.code === focus)
       if (fund) setFundFilter(String(fund.id))
       setFundFilterSet(true)
     }
